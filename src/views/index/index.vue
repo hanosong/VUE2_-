@@ -4,17 +4,20 @@
         <Cars />
         <!-- 地图 -->
         <aMap />
+        <!-- 选择车辆--底部导航栏 -->
+
         <!-- 会员 -->
         <!-- <div id="children-view" :class="[show ? 'open' : '']"> -->
         <div id="children-view" :class="{ open: show }">
             <router-view />
         </div>
 
-</div>
+    </div>
 </template>
 <script>
 import aMap from "../amap/index.vue";
 import Cars from "../cars/index.vue";
+import Navbar from "@c/navbar";
 export default {
     name: "Index",
     components: { aMap, Cars },
@@ -28,7 +31,7 @@ export default {
         show() {
             const router = this.$route;
             console.log(router);
-            return router.name = !(routerName === "Index")
+            return !(router.name === "Index")
         }
     },
     watch: {
