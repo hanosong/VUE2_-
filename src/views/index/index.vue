@@ -5,7 +5,7 @@
         <!-- 地图 -->
         <aMap />
         <!-- 选择车辆--底部导航栏 -->
-
+        <Navbar />
         <!-- 会员 -->
         <!-- <div id="children-view" :class="[show ? 'open' : '']"> -->
         <div id="children-view" :class="{ open: show }">
@@ -15,12 +15,12 @@
     </div>
 </template>
 <script>
-import aMap from "../amap/index.vue";
-import Cars from "../cars/index.vue";
+import aMap from "../amap";
+import Cars from "../cars";
 import Navbar from "@c/navbar";
 export default {
     name: "Index",
-    components: { aMap, Cars },
+    components: { aMap, Cars, Navbar },
     data() {
         return {
             // show: false,

@@ -1,7 +1,8 @@
 <template>
-    <div class="index-wrapper">
+    <section class="index-wrapper">
+        <div class="cars-item"></div>
         汽车列表
-</div>
+    </section>
 </template>
 <script>
 export default {
@@ -12,11 +13,5 @@ export default {
 };
 </script>
 <style lang="scss">
-.index-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-}
+@import './index.scss';
 </style>
