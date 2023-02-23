@@ -1,5 +1,8 @@
 $color-main: #34393f;
 
+/**
+    定义在前面的属性
+*/
 @mixin webkit ($type, $value) {
     -webkit-#{$type}: $value;
     -moz-#{$type}: $value;
@@ -7,3 +10,15 @@ $color-main: #34393f;
     -o-#{$type}: $value;
     #{$type}: $value;
 }
+
+/**
+    后缀属性 A--after
+*/
+@mixin webkitA ($type, $value) {
+    #{$type}:-webkit-#{$value};
+    #{$type}:-moz-#{$value};
+    #{$type}:-ms-#{$value};
+    #{$type}:-o-#{$value};
+    #{$type}:#{$value};
+}
+     

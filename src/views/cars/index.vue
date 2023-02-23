@@ -1,29 +1,44 @@
 <template>
     <div class="index-wrapper">
+        <swiper class="swiper" :options="swiperOption" @slideChange="onSlideChange" ref="mySwiper">
+            <swiper-slide>
+                <CarsItem />
+            </swiper-slide>
+            <!-- <swiper-slide>
+                <CarsItem />
+            </swiper-slide>
+            <swiper-slide>
+                <CarsItem />
+            </swiper-slide>
+            <swiper-slide>
+                <CarsItem />
+            </swiper-slide> -->
 
-        <section class="cars-item">
-            <header>
-                <h4 class="cars-logo">
-                    <img src="../../assets/images/cars-logo.png" alt="" />
-                    <span class="name"></span>
-                </h4>
-                <p class="cars-attr">
-                    新能源汽车 5座
-                </p>
-            </header>
-            <div class="cars-content">
-
-            </div>
-            <footer></footer>
-        </section>
-        汽车列表
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+        </swiper>
     </div>
 </template>
 <script>
+import CarsItem from '@c/carsList'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+import 'swiper/css/swiper.css';
 export default {
     name: "Cars",
+    components: {
+        CarsItem, Swiper, SwiperSlide
+    },
     data() {
-        return {};
+        return {
+            swiperOption: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            }
+        };
     }
 };
 </script>
