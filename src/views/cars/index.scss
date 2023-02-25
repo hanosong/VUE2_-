@@ -5,6 +5,74 @@
     right: 0;
     z-index: 11;
 }
+
+.cars-swiper-wrapper {
+    padding: 0 155px;
+    position: relative;
+    .swiper-container { overflow: initial;} // 默认是auto
+    // 修改当前按钮样式
+    .swiper-button-prev,
+    .swiper-button-next{
+        width: 60px;
+        height: 100px;
+        // 居中
+        top: 50%;
+        margin-top: -50px; // 减去自身高度的一半
+        border-radius: 100px;
+        background-color: #fff;
+        @include webkit(box-shadow, 0 0 18px 0 rgba(0, 0, 0, .2));
+        @include webkit(transition, all .3s ease 0s); // 全部动画缓冲 | 鼠标移入
+        &:hover{
+            background-color: $color-main;
+        }
+    }
+    .swiper-button-prev{
+        left: 53px;
+        // 重写小箭头样式
+        &:after{
+            content: "";
+            width: 17px;
+            height: 17px;
+            border-left: 3px solid #000;
+            border-top: 3px solid #000;
+            margin-left: 5px;
+            @include webkit(transform, rotate(-45deg));
+            @include webkit(box-sizing, border-box);
+            
+        }
+        &:hover{
+            background-color: $color-main;
+            &:after{
+                
+                border-left: 3px solid $color-blur;
+                border-top: 3px solid $color-blur;
+            
+            }
+        }
+    }
+    .swiper-button-next{
+        right: 53px;
+        &:after{
+            content: "";
+            width: 17px;
+            height: 17px;
+            border-right: 3px solid #000;
+            border-top: 3px solid #000;
+            margin-right: 5px;
+            @include webkit(transform, rotate(45deg));
+            @include webkit(box-sizing, border-box)
+        }
+        &:hover{
+            background-color: $color-main;
+            &:after{
+                
+                border-right: 3px solid $color-blur;
+                border-top: 3px solid $color-blur;
+            
+            }
+        }
+    }
+}
 // .cars-item {
 //     width: 505px;
 //     height: 257px;
